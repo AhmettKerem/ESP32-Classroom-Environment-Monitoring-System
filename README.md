@@ -11,15 +11,12 @@ Communication between the two devices is established over **Wi-Fi using the UDP 
 ## 📂 Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Project Structure](#project-structure)
 - [Hardware Requirements](#hardware-requirements)
 - [Software Requirements](#software-requirements)
 - [Circuit Design](#circuit-design)
 - [How to Set Up](#how-to-set-up)
 - [Code Explanation](#code-explanation)
 - [Usage](#usage)
-- [Future Improvements](#future-improvements)
-- [Author](#author)
 
 ---
 
@@ -73,19 +70,27 @@ Modern classrooms require efficient environmental control systems to ensure opti
 ## 🔌 Circuit Design
 
 ### ESP32-S3 (Sensor Node):
-- **BME280** → I2C  
-  - SDA → GPIO 8  
-  - SCL → GPIO 9  
+- **BME280** → I2C
+  - BME280 VCC → ESP32-S3 3.3V
+  - BME280 GND → ESP32-S3 GND
+  - BME280 SDA → ESP32-S3 GPIO 8  
+  - BME280 SCL → ESP32-S3 GPIO 9  
 - **PIR Motion Sensor**  
-  - OUT → GPIO 33
+- HC-SR501 VCC → ESP32-S3 5V
+-	HC-SR501 GND → ESP32-S3 GND
+-	HC-SR501 OUT → ESP32-S3 GPIO 33
+
 
 ### ESP32 (Display Node):
 - **OLED via SPI**  
-  - MOSI → GPIO 23  
-  - CLK  → GPIO 18  
-  - DC   → GPIO 17  
-  - RESET → GPIO 16  
-  - CS   → GPIO 5
+- OLED VCC → ESP32 3.3V
+-	OLED GND → ESP32 GND
+-	OLED MOSI (SDA) → ESP32 GPIO 23
+-	OLED CLK (SCL) → ESP32 GPIO 18
+-	OLED DC → ESP32 GPIO 17
+-	OLED RESET → ESP32 GPIO 16
+-	OLED CS → ESP32 GPIO 5
+
 
 > ⚠️ Both devices must be connected to the **same Wi-Fi network**.
 
