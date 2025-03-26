@@ -71,10 +71,11 @@ Modern classrooms require efficient environmental control systems to ensure opti
 
 ### ESP32-S3 (Sensor Node):
 - **BME280** → I2C
-  - BME280 VCC → ESP32-S3 3.3V
-  - BME280 GND → ESP32-S3 GND
-  - BME280 SDA → ESP32-S3 GPIO 8  
-  - BME280 SCL → ESP32-S3 GPIO 9  
+- BME280 VCC → ESP32-S3 3.3V
+-	BME280 GND → ESP32-S3 GND
+-	BME280 SDA → ESP32-S3 GPIO 8
+-	BME280 SCL → ESP32-S3 GPIO 9
+
 - **PIR Motion Sensor**  
 - HC-SR501 VCC → ESP32-S3 5V
 -	HC-SR501 GND → ESP32-S3 GND
